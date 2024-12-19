@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #7de2f6;
+    margin: 0;
+    padding: 0;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+img{
+    
+    display: flex;
+    justify-self: center;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Asegura que las columnas sean del mismo ancho */
+}
+
+thead th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+tbody td {
+    font-size: 14px;
+}
+
+td[contenteditable="true"] {
+    background-color: #f9f9f9;
+    cursor: text;
+}
+
+td[contenteditable="true"]:focus {
+    outline: 2px solid #00aaff;
+}
+.present-carga {
+    display: flex;
+    align-items: flex-start;
+    font-size: 12px;
+    height: auto;
+    width: auto;
+    padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 7px;
+        margin: 2px;
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Permite el desplazamiento horizontal */
+    }
+
+    thead th, tbody td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    th, td {
+        text-align: left; /* Mejor para pantallas pequeñas */
+    }
+
+    form button {
+        padding: 10px;
+        margin-top: 10px;
+    }
+    input, select, textarea {
+        width: 100%; /* Hace que los elementos ocupen el ancho completo de su contenedor */
+        box-sizing: border-box; /* Incluye bordes y padding en el ancho */
+        padding: 8px; /* Agrega espacio interno */
+        margin: 5px 0; /* Espaciado entre elementos */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    textarea {
+        width: 100%; /* Ensures it fits the column */
+        min-height: 50px; /* Minimum height */
+        resize: vertical; /* Allows users to resize vertically */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 5px;
+        margin: 0;
+        height: max-content;
+        overflow-y: visible;
+    }
+    
+}

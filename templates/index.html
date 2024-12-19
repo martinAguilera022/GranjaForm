@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Inspección</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='grupo-gta.png') }}" alt="Logo de la empresa" width="50" height="50">
+        <h1>Formulario de Inspección de Granjas</h1>
+        
+        <img >
+        <form action="/guardar_datos" method = "post" id="formulario">
+            <label for="fecha">Fecha de Inspección:</label>
+            <input type="date" id="fecha" name="fecha" required />
+
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" name="hora" required />
+
+            <label for="nombreGranja">Nombre de la Granja:</label>
+            <input type="text" id="nombreGranja" name="nombreGranja" required />
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required />
+
+            <label for="propietario">Propietario:</label>
+            <input type="text" id="propietario" name="propietario" required />
+
+            <label for="tipoPollo">Tipo Pollo:</label>
+            <select name="tipoPollo" id="tipoPollo">
+                <option value="EXP">EXP</option>
+                <option value="MI">MI</option>
+            </select>
+            <label for="destino">Destino:</label>
+            <input type="text" id="destino" name="destino" required />
+
+            <table>
+              
+                <tr class="cuadrilla-operarios">
+                    <th >Cuadrilla:</th>
+
+                    <td colspan="4">
+                        <input type="text" id="cuadrilla-1" />
+                        <input type="text" id="cuadrilla-2"/>
+                        <input type="text" id="cuadrilla-3" />
+                        <input type="text" id="cuadrilla-4" />
+                        <input type="text" id="cuadrilla-5" />
+                        
+                    </td>
+                </tr>
+                <tr class="cuadrilla-operarios">
+                    <th>Cantidad de operarios:</th>
+                    <td colspan="4">
+                        <input type="number" id="cantOperarios-1" />
+                        <input type="number" id="cantOperarios-2" />
+                        <input type="number" id="cantOperarios-3" />
+                        <input type="number" id="cantOperarios-4" />
+                        <input type="number" id="cantOperarios-5" />
+                        
+                    </td>
+                </tr>
+            </table>
+                <label for="mortandad">Mortandad en Carga:</label>
+                <input type="text" id="mortandad" name="destino" required />
+                
+                <p>Presentes Carga:</p>
+                <div class="present-carga">
+                   
+                
+                    <label for="propietario">Propietario:</label>
+                    <input type="checkbox" id="propietario-presente" name="propietario">
+
+                    <label for="encargado">Encargado:</label>
+                    <input type="checkbox" id="encargado-present" name="encargado">
+
+                    <label for="ninguno">Ninguno:</label>
+                    <input type="checkbox" id="ninguno-present" name="ninguno">
+                </div>
+                <p>Camino hasta la granja:</p>
+                <div class="present-carga">
+                  
+                    <label for="tierra">Tierra:</label>
+                    <input type="checkbox" id="tierra" name="tierra">
+
+                    <label for="asfalto">Asfaltado:</label>
+                    <input type="checkbox" id="asfalto" name="asfalto">
+
+                    <label for="mejorado">Mejorado:</label>
+                    <input type="checkbox" id="mejorado" name="mejorado">
+                </div>
+
+                <div class="container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Bueno</th>
+                                <th>Regular</th>
+                                <th>Malo</th>
+                                <th>Observaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Caminos internos de la granja</td>
+                                <td><input type="checkbox" id="caminosInternos-b"></td>
+                                <td><input type="checkbox" id="caminosInternos-r"></td>
+                                <td><input type="checkbox" id="caminosInternos-m"></td>
+                                <td><textarea id="caminosInternos-Observaciones" rows="2" cols="30"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Caminos hasta la Granja</td>
+                                <td><input type="checkbox" id="caminosHasta-b"></td>
+                                <td><input type="checkbox" id="caminosHasta-r"></td>
+                                <td><input type="checkbox" id="caminosHasta-m"></td>
+                                <td><textarea id="caminosHasta-Observaciones" rows="2" cols="30"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Tejidos de los galpones</td>
+                                <td><input type="checkbox" id="tejidosGalpon-b"></td>
+                                <td><input type="checkbox" id="tejidosGalpon-r"></td>
+                                <td><input type="checkbox" id="tejidosGalpon-m"></td>
+                                <td><textarea id="tejidosGalpon-Observaciones" rows="2" cols="30"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Cama de los galpones</td>
+                                <td><input type="checkbox" id="camaGalpon-b"></td>
+                                <td><input type="checkbox" id="camaGalpon-r"></td>
+                                <td><input type="checkbox" id="camaGalpon-m"></td>
+                                <td><textarea id="camaGalpon-Observaciones" rows="2" cols="30"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Estado de las jaulas</td>
+                                <td><input type="checkbox" id="estadoJaulas-b"></td>
+                                <td><input type="checkbox" id="estadoJaulas-r"></td>
+                                <td><input type="checkbox" id="estadoJaulas-m"></td>
+                                <td><textarea id="estadoJaulas-Observaciones" rows="2" cols="30"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="container">
+                    <label for="comienzoCarga">Comienzo de Carga:</label>
+                    <input type="time" id="comienzoCarga" name="comienzoCarga" required />
+                
+                    <label for="corteAlimento">Corte Alimento:</label>
+                    <input type="time" id="corteAlimento" name="corteAlimento" required />
+                
+                    <label for="horaAyuno">Horas de Ayuno:</label>
+                    <input type="time" id="horaAyuno" name="horaAyuno" required />
+                
+                    <label for="equipoCarga">Equipo de carga:</label>
+                    <input type="text" id="equipoCarga" name="equipoCarga" required />
+                </div>
+                
+                <div class="container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Bueno</th>
+                                <th>Regular</th>
+                                <th>Malo</th>
+                                <th>Observaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Manipulación de las aves al momento de la carga</td>
+                                <td><input type="checkbox" id="manipulacionCarga-b"></td>
+                                <td><input type="checkbox" id="manipulacionCarga-r"></td>
+                                <td><input type="checkbox" id="manipulacionCarga-m"></td>
+                                <td><textarea id="manipulacionCarga-Observaciones"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Encerrado de las aves</td>
+                                <td><input type="checkbox" id="encerradoAves-b"></td>
+                                <td><input type="checkbox" id="encerradoAves-r"></td>
+                                <td><input type="checkbox" id="encerradoAves-m"></td>
+                                <td><textarea id="encerradoAves-Observaciones"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Carga de las jaulas al camión</td>
+                                <td><input type="checkbox" id="cargaJaulas-b"></td>
+                                <td><input type="checkbox" id="cargaJaulas-r"></td>
+                                <td><input type="checkbox" id="cargaJaulas-m"></td>
+                                <td><textarea id="cargaJaulas-Observaciones"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>¿Las aves muertas son retiradas?</td>
+                                <td><input type="checkbox" id="avesMuertasRetiradas-b"></td>
+                                <td><input type="checkbox" id="avesMuertasRetiradas-r"></td>
+                                <td><input type="checkbox" id="avesMuertasRetiradas-m"></td>
+                                <td><textarea id="avesMuertasRetiradas-Observaciones"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                
+                <div class="container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Sí</th>
+                                <th>No</th>
+                                <th>N/A</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>¿Se cargan aves muertas?</td>
+                                <td><input type="checkbox" id="cargaAvesMuertas-si"></td>
+                                <td><input type="checkbox" id="cargaAvesMuertas-no"></td>
+                                <td><input type="checkbox" id="cargaAvesMuertas-na"></td>
+                            </tr>
+                            <tr>
+                                <td>¿Se sacrifican respetando el bienestar animal las aves con fracturas?</td>
+                                <td><input type="checkbox" id="sacrificioBienestar-si"></td>
+                                <td><input type="checkbox" id="sacrificioBienestar-no"></td>
+                                <td><input type="checkbox" id="sacrificioBienestar-na"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <label for="na">N/A:</label>
+                    <input type="text" id="na" name="na">
+                    <label for="na">Observaciones:</label>
+                    <input type="text" id="observaciones" name="observaciones">
+                </div>
+            
+              
+            <button type="submit" id="generar">Generar Formulario</button>
+        </form>
+       
+    
+
+    </div>
+    
+
+    
+    <script>
+       
+        document.addEventListener("DOMContentLoaded", () => {
+            const textareas = document.querySelectorAll("textarea");
+            
+            textareas.forEach(textarea => {
+                // Ajusta la altura inicial
+                autoResize(textarea);
+                
+                // Escucha el evento `input` para ajustarla mientras se escribe
+                textarea.addEventListener("input", () => autoResize(textarea));
+            });
+    
+            function autoResize(textarea) {
+                textarea.style.height = "auto"; // Restablece la altura para recalcular
+                textarea.style.height = `${textarea.scrollHeight}px`; // Ajusta según el contenido
+            }
+        });
+        
+
+        document.getElementById('formulario').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const datos = {
+                fecha: document.getElementById('fecha').value,
+                hora: document.getElementById('hora').value,
+                nombreGranja: document.getElementById('nombreGranja').value,
+                direccion: document.getElementById('direccion').value,
+                propietario: document.getElementById('propietario').value,
+                tipoPollo: document.getElementById('tipoPollo').value,
+                destino: document.getElementById('destino').value,
+                cuadrilla1: document.getElementById('cuadrilla-1').value,
+                cuadrilla2: document.getElementById('cuadrilla-2').value,
+                cuadrilla3: document.getElementById('cuadrilla-3').value,
+                cuadrilla4: document.getElementById('cuadrilla-4').value,
+                cantOperarios1: document.getElementById('cantOperarios-1').value,
+                cantOperarios2: document.getElementById('cantOperarios-2').value,
+                cantOperarios3: document.getElementById('cantOperarios-3').value,
+                cantOperarios4: document.getElementById('cantOperarios-4').value,
+                mortandad: document.getElementById('mortandad').value,
+                propietarioPresente: document.getElementById('propietario-presente').checked ? "X" : "",
+                encargadoPresente: document.getElementById('encargado-present').checked ? "X" : "",
+                ningunoPresente: document.getElementById('ninguno-present').checked ? "X" : "",
+                tierra: document.getElementById('tierra').checked ? "X" : "",
+                asfalto: document.getElementById('asfalto').checked ? "X" : "",
+                mejorado: document.getElementById('mejorado').checked ? "X" : "",
+                caminosInternosB: document.getElementById('caminosInternos-b').checked ? "X" : "",
+                caminosInternosR: document.getElementById('caminosInternos-r').checked ? "X" : "",
+                caminosInternosM: document.getElementById('caminosInternos-m').checked ? "X" : "",
+                caminosInternosObservaciones: document.getElementById('caminosInternos-Observaciones').value,
+                caminosHastaB: document.getElementById('caminosHasta-b').checked ? "X" : "",
+                caminosHastaR: document.getElementById('caminosHasta-r').checked ? "X" : "",
+                caminosHastaM: document.getElementById('caminosHasta-m').checked ? "X" : "",
+                caminosHastaObservaciones: document.getElementById('caminosHasta-Observaciones').value,
+                tejidosGalponB: document.getElementById('tejidosGalpon-b').checked ? "X" : "",
+                tejidosGalponR: document.getElementById('tejidosGalpon-r').checked ? "X" : "",
+                tejidosGalponM: document.getElementById('tejidosGalpon-m').checked ? "X" : "",
+                tejidosGalponObservaciones: document.getElementById('tejidosGalpon-Observaciones').value,
+                camaGalponB: document.getElementById('camaGalpon-b').checked ? "X" : "",
+                camaGalponR: document.getElementById('camaGalpon-r').checked ? "X" : "",
+                camaGalponM: document.getElementById('camaGalpon-m').checked ? "X" : "",
+                camaGalponObservaciones: document.getElementById('camaGalpon-Observaciones').value,
+                estadoJaulasB: document.getElementById('estadoJaulas-b').checked ? "X" : "",
+                estadoJaulasR: document.getElementById('estadoJaulas-r').checked ? "X" : "",
+                estadoJaulasM: document.getElementById('estadoJaulas-m').checked ? "X" : "",
+                estadoJaulasObservaciones: document.getElementById('estadoJaulas-Observaciones').value,
+                comienzoCarga: document.getElementById('comienzoCarga').value,
+                corteAlimento: document.getElementById('corteAlimento').value,
+                horaAyuno: document.getElementById('horaAyuno').value,
+                equipoCarga: document.getElementById('equipoCarga').value,
+                manipulacionCargaB: document.getElementById('manipulacionCarga-b').checked ? "X" : "",
+                manipulacionCargaR: document.getElementById('manipulacionCarga-r').checked ? "X" : "",
+                manipulacionCargaM: document.getElementById('manipulacionCarga-m').checked ? "X" : "",
+                manipulacionCargaObservaciones: document.getElementById('manipulacionCarga-Observaciones').value,
+                encerradoAvesB: document.getElementById('encerradoAves-b').checked ? "X" : "",
+                encerradoAvesR: document.getElementById('encerradoAves-r').checked ? "X" : "",
+                encerradoAvesM: document.getElementById('encerradoAves-m').checked ? "X" : "",
+                encerradoAvesObservaciones: document.getElementById('encerradoAves-Observaciones').value,
+                cargaJaulasB: document.getElementById('cargaJaulas-b').checked ? "X" : "",
+                cargaJaulasR: document.getElementById('cargaJaulas-r').checked ? "X" : "",
+                cargaJaulasM: document.getElementById('cargaJaulas-m').checked ? "X" : "",
+                cargaJaulasObservaciones: document.getElementById('cargaJaulas-Observaciones').value,
+                avesMuertasRetiradasB: document.getElementById('avesMuertasRetiradas-b').checked ? "X" : "",
+                avesMuertasRetiradasR: document.getElementById('avesMuertasRetiradas-r').checked ? "X" : "",
+                avesMuertasRetiradasM: document.getElementById('avesMuertasRetiradas-m').checked ? "X" : "",
+                avesMuertasRetiradasObservaciones: document.getElementById('avesMuertasRetiradas-Observaciones').value,
+                cargaAvesMuertasSi: document.getElementById('cargaAvesMuertas-si').checked ? "X" : "",
+                cargaAvesMuertasNo: document.getElementById('cargaAvesMuertas-no').checked ? "X" : "",
+                cargaAvesMuertasNa: document.getElementById('cargaAvesMuertas-na').checked ? "X" : "",
+                sacrificioBienestarSi: document.getElementById('sacrificioBienestar-si').checked ? "X" : "",
+                sacrificioBienestarNo: document.getElementById('sacrificioBienestar-no').checked ? "X" : "",
+                sacrificioBienestarNa: document.getElementById('sacrificioBienestar-na').checked ? "X" : "",
+                na: document.getElementById('na').value,
+                observaciones: document.getElementById('observaciones').value
+            };
+
+            try {
+                const response = await fetch('/guardar_datos', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(datos), // Convertir los datos a formato JSON
+                });
+
+                if (response.ok) {
+                    // La respuesta es exitosa, manejamos la descarga del archivo
+                    const blob = await response.blob(); // Obtener el archivo como un Blob
+                    const url = window.URL.createObjectURL(blob); // Crear una URL para el Blob
+                    const link = document.createElement('a'); // Crear un elemento de enlace
+                    link.href = url; // Asignar la URL al enlace
+                    link.download = 'archivo_modificado.xlsx'; // Establecer el nombre del archivo
+                    link.click(); // Hacer clic en el enlace para descargar
+                    window.URL.revokeObjectURL(url); // Revocar la URL después de usarla
+                    console.log('Archivo descargado con éxito');
+                } else {
+                    // Si la respuesta no es exitosa, mostrar el mensaje de error
+                    const errorData = await response.json();
+                    console.error('Error al generar el archivo:', errorData.message);
+                }
+            } catch (error) {
+                console.error('Error al enviar los datos:', error);
+            }
+        });
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+     
+</body>
+</html>
